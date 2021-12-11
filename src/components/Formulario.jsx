@@ -33,7 +33,7 @@ const Formulario = ({cliente}) => {
     const handleSubmit = async (values, {resetForm}) => {
         
         try {
-            let url = 'http://localhost:4000/clientes';
+            let url = `${import.meta.env.VITE_API_URL}/clientes`;
             let method = 'POST';
             if (cliente?.id) {
                 url = `${url}/${cliente?.id}`;

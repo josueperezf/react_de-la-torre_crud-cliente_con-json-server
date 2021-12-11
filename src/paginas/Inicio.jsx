@@ -7,7 +7,9 @@ export const Inicio = () => {
     useEffect (() => {
         const obtenerClientes = async () => {
             try {
-                const url = 'http://localhost:4000/clientes';
+                // import.meta.env.VITE_API_URL es  para tener las variables de entorno segun sea el caso,
+                // develop para localhost, y la otra para product
+                const url =  `${import.meta.env.VITE_API_URL}/clientes`;
                 const respuesta = await fetch(url);
                 const resultado = await respuesta.json();
                 setclientes(resultado)
@@ -23,7 +25,7 @@ export const Inicio = () => {
             return;
         }
         try {
-            const url = `http://localhost:4000/clientes/${id}`;
+            const url = `${import.meta.env.VITE_API_URL}/clientes/${id}`;
             const respuesta = await fetch(url, {
                 method: 'DELETE'
             });
@@ -39,7 +41,7 @@ export const Inicio = () => {
 
     return (
         <>
-            <h1 className='font-black text-4xl text-blue-900 '>ClienteS</h1>
+            <h1 className='font-black text-4xl text-blue-900 '>Clientes</h1>
             <p className='mt-3'>Administra tus clientes</p>
 
             <table className="w-full mt-5 table-auto shadow bg-white">
