@@ -1,0 +1,12 @@
+{
+  "clientes": [
+    {
+      "nombre": "karen",
+      "empresa": "LG",
+      "email": "nombre@correo.cl",
+      "telefono": "975648073",
+      "notas": "",
+      "id": 4
+    }
+  ]
+}
